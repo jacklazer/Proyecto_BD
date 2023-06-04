@@ -4,7 +4,7 @@
  */
 
 package com.mycompany.proyecto_bd;
-import vista.Ventana_principal_vista;
+import vista.Ventana_de_consultas_temporal_vista;
 
 /**
  *
@@ -15,7 +15,7 @@ public class Proyecto_BD {
     public static void main(String[] args) {
         System.out.println("Inicio de programa");
         
-        Ventana_principal_vista ventanaPrincipal = new Ventana_principal_vista();
+        Ventana_de_consultas_temporal_vista ventanaPrincipal = new Ventana_de_consultas_temporal_vista();
        
         ventanaPrincipal.setVisible (true);
     }
