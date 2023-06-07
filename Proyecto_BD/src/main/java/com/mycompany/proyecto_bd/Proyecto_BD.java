@@ -1,22 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
- */
 
 package com.mycompany.proyecto_bd;
-import vista.Ventana_de_consultas_temporal_vista;
 
+import accesoBD.IniciarSesion_DAO;
+import accesoBD.InterfaceIniciarSesionDAO;
+import controlador.ControladorIniciarSesion;
+import vista.VistaIniciarSesion;
+import modelo.ModeloIniciarSesion;
 /**
  *
  * @author juanc
  */
-public class Proyecto_BD {
+public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Inicio de programa");
+        VistaIniciarSesion view = new VistaIniciarSesion ();
         
-        Ventana_de_consultas_temporal_vista ventanaPrincipal = new Ventana_de_consultas_temporal_vista();
-       
-        ventanaPrincipal.setVisible (true);
+        ModeloIniciarSesion model = new ModeloIniciarSesion("Usuario", "Contraseña");
+        InterfaceIniciarSesionDAO daoAministrador = new IniciarSesion_DAO();
+        ControladorIniciarSesion ctrl = new ControladorIniciarSesion (view,model, daoAministrador);
+
+        ctrl.iniciar();
+
+        view.setVisible(true);
     }
 }
